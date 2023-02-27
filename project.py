@@ -3,7 +3,7 @@ import tkinter as tk
 from tkinter import filedialog
 import numpy as np
 
-def Life2CodingRGB(event, x, y, flags, param):
+def RGBvaluefinder(event, x, y, flags, param):
     if event == cv2.EVENT_MOUSEMOVE:  # checks mouse moves
         colorsBGR = image[y, x]
         colorsRGB = tuple(reversed(colorsBGR))  # Reversing the OpenCV BGR format to RGB format
@@ -30,7 +30,7 @@ if image is None:
 else:
     # Create windows and set Mousecallback to a function for the main window
     cv2.namedWindow('Image')
-    cv2.setMouseCallback('Image', Life2CodingRGB)
+    cv2.setMouseCallback('Image', RGBvaluefinder)
     cv2.namedWindow('RGB Values')
     cv2.namedWindow('RGB Values as Number')
 
@@ -47,3 +47,5 @@ else:
 
     # Close all windows when done
     cv2.destroyAllWindows()
+
+    
